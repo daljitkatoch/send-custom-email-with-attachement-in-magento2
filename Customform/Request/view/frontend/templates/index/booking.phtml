@@ -1,0 +1,120 @@
+<?php
+/**
+* Copyright © 2016 Nodexweb Ecommerce. All rights reserved.
+*/
+?>
+<?php
+/**
+* {{controller}} {{action}} template
+*
+* @var $block \Customform\Request\Block\Index\Index
+*/
+?>
+<style>
+form.request .field {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+input#attachment {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 7px;
+    border-radius: 6px;
+}
+</style>
+<form class="request" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" id="request-form" method="post"
+ data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}' enctype="multipart/form-data">
+	<fieldset class="fieldset">
+		<div class="field note no-label">
+			<h2 class="mgz-element-heading-text" style="text-align: center; padding: 30px 0;">Contact Form With Attachment</h2>
+		</div>
+		<div class="field name required">
+			<label class="label" for="name"><span>First Name</span></label>
+			<div class="control">
+				<input name="firstname" id="firstname" title="" value="" class="input-text" type="text" placeholder="First Name*" data-validate="{required:true}"/>
+			</div>
+		</div>
+		<div class="field name required">
+			<label class="label" for="name"><span>Last Name</span></label>
+			<div class="control">
+				<input name="lastname" id="lastname" title="" placeholder="Last Name*" value="" class="input-text" type="text" data-validate="{required:true}"/>
+			</div>
+		</div>
+		<div class="field email required">
+			<label class="label" for="email"><span>Your Email</span></label>
+			<div class="control">
+				<input name="email" id="email" title="" placeholder="Your Email*" value="" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+			</div>
+		</div>
+		<div class="field phone required">
+			<label class="label" for="phone"><span>Your Phone</span></label>
+			<div class="control">
+				<input name="phone" id="phone" title="" value="" class="input-text" type="text" placeholder="Your  Phone*"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="street_address"><span>Street Address</span></label>
+			<div class="control">
+				<input name="street_address" id="phone" title="" value="" class="input-text" type="text" placeholder="Street Address"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="apartment"><span>Apartment, Suite etc</span></label>
+			<div class="control">
+				<input name="apartment" id="apartment" title="" value="" class="input-text" type="text" placeholder="Apartment, Suite etc"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="country"><span>Country</span></label>
+			<div class="control">
+			<input name="country" id="country" title="" value="" class="input-text" type="text" placeholder="Country"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="region"><span>Region/State</span></label>
+			<div class="control">
+				<input name="region" id="region" title="" value="" class="input-text" type="text" placeholder="Region/State"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="city"><span>City</span></label>
+			<div class="control">
+				<input name="city" id="city" title="" value="" class="input-text" type="text" placeholder="City"/>
+			</div>
+		</div>
+		<div class="field wf-lg-1-2 wf-md-1-2 wf-sm-1-2 type-text webforms-fields-25 webforms-fields-region ">
+			<label class="label" for="postcode"><span>Post Code</span></label>
+			<div class="control">
+				<input name="postcode" id="postcode" title="" value="" class="input-text" type="text" placeholder="Post Code"/>
+			</div>
+		</div>		
+		<div class="field proof">
+			<label class="label" for="proof"><span>File Upload</span></label>
+			<p class="webforms-fields-comment" id="comment_fieldEcHGRq31" tabindex="0" style="margin-top: -2px;  padding-left: 5px;">Make sure the attachment or photo is well lit and easily readable. Accepted file types are JPG and PNG.</p>
+			<div class="control">
+				<input name="attachment" id="attachment" title=""  value="" class="input-text" type="file"/>
+			</div>
+		</div>
+		<div class="field choice option-0" style="">
+			<input type="checkbox" name="opt_in" id="opt_in" value="Opt in for marketing material and data usage" class="checkbox" data-validate="{required:true}"><label>Opt in for marketing material and data usage</label>
+		</div>
+		<div class="webforms-gdpr" style="margin: 0 !important; padding-left: 10px;">
+			<div class="webforms-gdpr-text">
+				<p style="max-width: 520px;">This wesbite is committed to protecting your privacy and ensuring that your personal information is protected. For more information, please visit our <a href="#">Privacy Notice</a>, <a href="#">Website Standard Ts &amp; Cs</a>.</p>
+			</div>
+			<div class="webforms-gdpr-checkbox field choice" role="group" style="padding-left: 0px;">
+				<input id="gdpr" type="checkbox" name="gdpr" class="checkbox required-entry" value="1" data-validate="{required:true}">
+				<label for="gdpr"><span>By clicking this box, I Agree</span></label>
+			</div>
+		</div>
+	</fieldset>
+	<div class="actions-toolbar field">
+		<div class="primary">
+			<input type="hidden" name="hideit" id="hideit" value="" />
+			<button type="submit" title="Submit" class="action submit primary">
+				<span>Submit</span>
+			</button>
+		</div>
+	 </div>
+</form>
